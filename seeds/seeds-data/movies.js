@@ -8,7 +8,9 @@ module.exports = [{
     imdb: 'http://www.imdb.com/title/tt0095016',
     homepage: '',
     watched: 'yes',
-    want_to_watch: ''
+    want_to_watch: '',
+    video_title: 'Original Trailer',
+    video_url: 'https://www.youtube.com/watch?v=2TQ-pOvI6Xo'
   },
   {
     title: 'Get Out',
@@ -20,6 +22,8 @@ module.exports = [{
     imdb: 'http://www.imdb.com/title/tt5052448',
     homepage: 'http://www.getoutfilm.com/',
     watched: 'yes',
-    want_to_watch: ''
+    want_to_watch: '',
+    video_title: "Official Trailer",
+    video_url: 'https://www.youtube.com/watch?v=sRfnevzM9kQ'
   }
 ]

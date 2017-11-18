@@ -11,6 +11,8 @@ exports.up = function(knex, Promise) {
     table.text('homepage');
     table.string('watched');
     table.string('want_to_watch');
+    table.string('video_title');
+    table.string('video_url');
   })
 };
 
