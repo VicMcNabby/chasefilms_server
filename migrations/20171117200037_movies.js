@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
     table.text('overview');
     table.text('tagline');
     table.integer('rating');
-    table.text('movie_db_id');
+    table.integer('movie_db_id');
     table.text('imdb');
     table.text('homepage');
     table.string('watched');
