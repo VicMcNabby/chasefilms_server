@@ -9,22 +9,34 @@ router.get('/movies', (req, res, next) => {
   });
 });
 
-router.get('/movie/:id', (req, res) => {
+router.get('/movies/watched', (req, res, next) => {
+  queries.getWatchedMovies().then(movies => {
+    res.json(movies);
+  });
+});
+
+router.get('/movies/want_to_watch', (req, res, next) => {
+  queries.getWantToWatchMovies().then(movies => {
+    res.json(movies);
+  });
+});
+
+router.get('/movies/:id', (req, res) => {
   queries.getOneMovie(req.params.id).then(movieId => {
     res.json(movieId)
   })
 })
 
 router.post('/movies', (req, res, next) => {
-  queries.addMovieToList(req.body).then(response => {
+  queries.addMovieToDatabase(req.body).then(response => {
     res.json(response)
   })
 })
 
-router.delete('/movie/:id', (req, res, next) => {
-  queries.deleteMovie(req.params.id).then(response => {
+router.delete('/movies/:id', (req, res, next) => {
+  queries.removeMovie(req.params.id).then(response => {
     res.json({
-      "message": "deleted"
+      "message": "removed"
     })
   })
 })

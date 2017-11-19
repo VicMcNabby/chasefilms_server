@@ -21,8 +21,8 @@ module.exports = [{
     movie_db_id: 419430,
     imdb: 'http://www.imdb.com/title/tt5052448',
     homepage: 'http://www.getoutfilm.com/',
-    watched: 'yes',
-    want_to_watch: '',
+    watched: '',
+    want_to_watch: 'yes',
     video_title: "Official Trailer",
     video_url: 'https://www.youtube.com/watch?v=sRfnevzM9kQ'
   }
