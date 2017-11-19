@@ -1,10 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
+// var authMiddleware = require('./auth/middleware.js');
 const app = express();
 
 const router = require('./api/router');
@@ -16,6 +20,10 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser())
+app.use(cors({
+  credentials: true,
+  origin: process.env.CORS_ORIGIN
+}));
 
 
 app.use('/api/v1', router);
