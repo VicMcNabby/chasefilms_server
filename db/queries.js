@@ -7,6 +7,12 @@ module.exports = {
   getUserByEmail(email) {
     return knex('users').where('email', email).first();
   },
+  getAllUsers() {
+    return knex('users');
+  },
+  deleteUserById(id) {
+    return knex('users').where('id', id).del()
+  },
   getAllMovies() {
     return knex('movies');
   },

@@ -63,6 +63,20 @@ router.post('/users', (req, res, next) => {
   }
 });
 
+router.get('/users', (req, res, next) => {
+  queries.getAllUsers().then(users => {
+    res.json(users)
+  });
+});
+
+router.delete('/users/:id', (req, res, next) => {
+  queries.deleteUserById(req.params.id).then(response => {
+    res.json({
+      "message": "user deleted"
+    });
+  });
+});
+
 router.get('/movies', (req, res, next) => {
   queries.getAllMovies().then(movies => {
     res.json(movies);
@@ -94,21 +108,21 @@ router.get('/movies/want_to_watch', (req, res, next) => {
 router.get('/movies/:id', (req, res) => {
   queries.getOneMovie(req.params.id).then(movieId => {
     res.json(movieId)
-  })
-})
+  });
+});
 
 router.post('/movies', (req, res, next) => {
   queries.addMovieToDatabase(req.body).then(response => {
     res.json(response)
-  })
-})
+  });
+});
 
 router.delete('/movies/:id', (req, res, next) => {
   queries.removeMovie(req.params.id).then(response => {
     res.json({
       "message": "removed"
-    })
-  })
-})
+    });
+  });
+});
 
 module.exports = router;
