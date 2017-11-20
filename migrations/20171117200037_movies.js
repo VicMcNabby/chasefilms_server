@@ -5,12 +5,9 @@ exports.up = function(knex, Promise) {
     table.text('poster_url');
     table.text('overview');
     table.text('tagline');
-    table.integer('rating');
     table.integer('movie_db_id');
     table.text('imdb');
     table.text('homepage');
-    table.string('watched');
-    table.string('want_to_watch');
     table.string('video_title');
     table.string('video_url');
   })

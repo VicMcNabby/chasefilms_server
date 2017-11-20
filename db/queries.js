@@ -20,11 +20,13 @@ module.exports = {
     return knex('movies').where('users_id', id)
       .join('user_movies', 'movie_id', '=', 'movies.id');
   },
-  getWatchedMovies() {
-    return knex('movies').where('movies.watched', 'yes')
+  getWatchedMovies(id) {
+    return knex('movies').where('users_id', id).where('user_movies.watched', 'yes')
+      .join('user_movies', 'movie_id', '=', 'movies.id');
   },
-  getWantToWatchMovies() {
-    return knex('movies').where('movies.want_to_watch', 'yes')
+  getWantToWatchMovies(id) {
+    return knex('movies').where('users_id', id).where('user_movies.want_to_watch', 'yes')
+      .join('user_movies', 'movie_id', '=', 'movies.id');
   },
   getOneMovie(id) {
     return knex('movies').where('id', id).first();

@@ -93,14 +93,14 @@ router.get('/users/:id/movies', (req, res) => {
   // }
 });
 
-router.get('/movies/watched', (req, res, next) => {
-  queries.getWatchedMovies().then(movies => {
+router.get('/users/:id/movies/watched', (req, res, next) => {
+  queries.getWatchedMovies(req.params.id).then(movies => {
     res.json(movies);
   });
 });
 
-router.get('/movies/want_to_watch', (req, res, next) => {
-  queries.getWantToWatchMovies().then(movies => {
+router.get('/users/:id/movies/want_to_watch', (req, res, next) => {
+  queries.getWantToWatchMovies(req.params.id).then(movies => {
     res.json(movies);
   });
 });

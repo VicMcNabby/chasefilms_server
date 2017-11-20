@@ -3,6 +3,10 @@ exports.up = function(knex, Promise) {
     table.increments('id').primary();
     table.integer('users_id').references('users.id').unsigned().onDelete('cascade');
     table.integer('movie_id').references('movies.id').unsigned().onDelete('cascade');
+    table.string('watched');
+    table.integer('rating').defaultTo(0);
+    table.string('want_to_watch');
+
   });
 };
 
