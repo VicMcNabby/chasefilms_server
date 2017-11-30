@@ -20,10 +20,11 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser())
-app.use(cors({
-  credentials: true,
-  origin: process.env.CORS_ORIGIN
-}));
+// app.use(cors({
+//   credentials: true,
+//   origin: process.env.CORS_ORIGIN
+// }));
+app.use(cors());
 
 
 app.use('/api/v1', router);
