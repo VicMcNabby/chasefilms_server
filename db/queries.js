@@ -28,11 +28,11 @@ module.exports = {
   },
   getWatchedMovies(id) {
     return knex('movies').where('users_id', id).where('user_movies.watched', 'yes')
-      .join('user_movies', 'movie_id', '=', 'movies.id');
+      .join('user_movies', 'moviedb_id', '=', 'movies.movie_db_id');
   },
   getWantToWatchMovies(id) {
     return knex('movies').where('users_id', id).where('user_movies.want_to_watch', 'yes')
-      .join('user_movies', 'movie_id', '=', 'movies.id');
+      .join('user_movies', 'moviedb_id', '=', 'movies.movie_db_id');
   },
   getOneMovie(id) {
     return knex('movies').where('id', id).first();
