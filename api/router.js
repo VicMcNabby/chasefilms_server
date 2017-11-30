@@ -117,6 +117,12 @@ router.post('/movies', (req, res, next) => {
   });
 });
 
+router.post('/user_movies', (req, res, next) => {
+  queries.addUserMovie(req.body).then(response => {
+    res.json(response)
+  });
+});
+
 router.delete('/movies/:id', (req, res, next) => {
   queries.removeMovie(req.params.id).then(response => {
     res.json({

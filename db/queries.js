@@ -13,6 +13,9 @@ module.exports = {
   deleteUserById(id) {
     return knex('users').where('id', id).del()
   },
+  addUserMovie(movie) {
+    return knex('user_movies').insert(movie, '*');
+  },
   getAllMovies() {
     return knex('movies');
   },
