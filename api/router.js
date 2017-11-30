@@ -83,6 +83,12 @@ router.get('/movies', (req, res, next) => {
   });
 });
 
+router.get('/user_movies', (req, res, next) => {
+  queries.getAllUserMovies().then(movies => {
+    res.json(movies);
+  });
+});
+
 router.get('/users/:id/movies', (req, res) => {
   // if (!isNaN(req.params.id)) {
   queries.getMoviesByUserId(req.params.id).then(movies => {

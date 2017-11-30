@@ -10,6 +10,9 @@ module.exports = {
   getAllUsers() {
     return knex('users');
   },
+  getAllUserMovies() {
+    return knex('user_movies');
+  },
   deleteUserById(id) {
     return knex('users').where('id', id).del()
   },
