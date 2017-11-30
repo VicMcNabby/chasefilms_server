@@ -6,10 +6,6 @@ exports.up = function(knex, Promise) {
     table.text('overview');
     table.text('tagline');
     table.integer('movie_db_id');
-    table.text('imdb');
-    table.text('homepage');
-    table.string('video_title');
-    table.string('video_url');
   })
 };
 
