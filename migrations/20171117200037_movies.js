@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.text('poster_url');
     table.text('overview');
     table.text('tagline');
-    table.integer('movie_db_id');
+    table.integer('movie_db_id').unique().notNullable();
   })
 };
 
