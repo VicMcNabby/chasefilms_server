@@ -42,5 +42,8 @@ module.exports = {
   },
   removeMovie(id) {
     return knex('movies').where('id', id).del();
+  },
+  removeUserMovie(id) {
+    return knex('user_movies').where('id', id).del();
   }
 }

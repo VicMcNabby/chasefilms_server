@@ -137,4 +137,12 @@ router.delete('/movies/:id', (req, res, next) => {
   });
 });
 
+router.delete('/user_movies/:id', (req, res, next) => {
+  queries.removeUserMovie(req.params.id).then(response => {
+    res.json({
+      "message": "removed"
+    });
+  });
+});
+
 module.exports = router;
