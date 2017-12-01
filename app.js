@@ -14,7 +14,10 @@ const app = express();
 const router = require('./api/router');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(cors());
+app.use(cors({
+  credentials: true,
+  origin: process.env.CORS_ORIGIN
+}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
