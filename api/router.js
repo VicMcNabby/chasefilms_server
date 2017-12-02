@@ -24,11 +24,11 @@ router.post('/auth/login', (req, res, next) => {
               });
             });
           } else {
-            next(new Error("Invalid Email/Password"))
+            next(new Error("Password Incorrect"))
           }
         });
       } else {
-        next(new Error("Invalid Email/Password"))
+        next(new Error("Email Not Found"))
       }
     });
   } else {
