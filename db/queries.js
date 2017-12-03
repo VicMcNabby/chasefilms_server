@@ -24,7 +24,7 @@ module.exports = {
   },
   getMoviesByUserId(id) {
     return knex('movies').where('users_id', id)
-      .join('user_movies', 'movie_id', '=', 'movies.id');
+      .join('user_movies', 'moviedb_id', '=', 'movies.movie_db_id');
   },
   getWatchedMovies(id) {
     return knex('movies').where('users_id', id).where('user_movies.watched', 'yes')
