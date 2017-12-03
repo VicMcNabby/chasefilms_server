@@ -99,6 +99,12 @@ router.get('/users/:id/movies', (req, res) => {
   // }
 });
 
+router.get('/users/:id/movies/:movieId', (req, res, next) => {
+  queries.getUserMovieByMovieId(req.params.id, req.params.movieId).then(movie => {
+    res.json(movie)
+  })
+})
+
 router.get('/users/:id/movies/watched', (req, res, next) => {
   queries.getWatchedMovies(req.params.id).then(movies => {
     res.json(movies);
