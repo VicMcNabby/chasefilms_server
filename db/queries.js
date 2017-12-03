@@ -34,9 +34,9 @@ module.exports = {
     return knex('movies').where('users_id', id).where('user_movies.want_to_watch', 'yes')
       .join('user_movies', 'moviedb_id', '=', 'movies.movie_db_id');
   },
-  getUserMovieByMovieId(id, movieId) {
-    return knex('movies').where('users_id', id).where('movie_db_id', movieId).first()
-  },
+  // getUserMovieByMovieId(id, movieId) {
+  //   return knex('movies').where('users_id', id).where('movie_db_id', movieId).first()
+  // },
   getOneMovie(id) {
     return knex('movies').where('id', id).first();
   },
