@@ -99,11 +99,6 @@ router.get('/users/:id/movies', (req, res) => {
   // }
 });
 
-// router.get('/users/:id/movies/:movieId', (req, res, next) => {
-//   queries.getUserMovieByMovieId(req.params.id, req.params.movieId).then(movie => {
-//     res.json(movie)
-//   })
-// })
 
 router.get('/users/:id/movies/watched', (req, res, next) => {
   queries.getWatchedMovies(req.params.id).then(movies => {
@@ -150,5 +145,11 @@ router.delete('/user_movies/:id', (req, res, next) => {
     });
   });
 });
+
+router.put('/user_movies/:id', (req, res, next) => {
+  queries.updateMovie(req.params.id, req.body).then(movie => {
+    res.json(movie)
+  })
+})
 
 module.exports = router;
